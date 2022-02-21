@@ -21,6 +21,9 @@ function App() {
           </Select>
         </FormControl>
       </div>
+      <div className="widgets">
+        <h2>Widgets</h2>
+      </div>
     </div>
   );
 }
