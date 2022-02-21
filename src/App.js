@@ -17,7 +17,7 @@ function App() {
             <MenuItem value="Worldwide">Worldwide</MenuItem>
             <MenuItem value="Daily">Daily</MenuItem>
             <MenuItem value="Monthly">Monthly</MenuItem>
-            <MenuItem value="Worldwide">Worldwide</MenuItem>
+            <MenuItem value="Worldwide">Month</MenuItem>
           </Select>
         </FormControl>
       </div>
