@@ -16,8 +16,8 @@ function App() {
           <Select variant="outlined" value="abc">
             <MenuItem value="Worldwide">Worldwide</MenuItem>
             <MenuItem value="Daily">Daily</MenuItem>
-            <MenuItem value="Monthly">Mon</MenuItem>
-            <MenuItem value="Worldwide">Month</MenuItem>
+            <MenuItem value="Monthly">Something</MenuItem>
+            <MenuItem value="Month">Month</MenuItem>
           </Select>
         </FormControl>
       </div>
