@@ -6,18 +6,23 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [countries, setCountries] = useState(["USA", "China"]);
+
+  useEffect(() => {
+    //API Call
+  }, [countries]);
   return (
     <div className="App">
       <div className="header">
         <h1>Cleaned project</h1>
         <FormControl>
           <Select variant="outlined" value="abc">
-            <MenuItem value="Worldwide">Worldwide</MenuItem>
-            <MenuItem value="Daily">Daily</MenuItem>
-            <MenuItem value="Monthly">Something</MenuItem>
-            <MenuItem value="Month">Month</MenuItem>
+            {countries.map((country) => (
+              <MenuItem value={country}>{country}</MenuItem>
+            ))}
           </Select>
         </FormControl>
       </div>
