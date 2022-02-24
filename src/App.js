@@ -15,6 +15,15 @@ function App() {
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
 
+  //On reload, select data to worldwide info
+  useEffect(() => {
+    fetch("https://disease.sh/v3/covid-19/all")
+      .then((response) => response.json())
+      .then((data) => {
+        setCountryInfo(data);
+      });
+  }, []);
+
   useEffect(() => {
     //API Call
     const getCountriesData = async () => {
@@ -75,9 +84,21 @@ function App() {
         </div>
 
         <div className="widgets">
-          <InfoBox title="Coronavirus cases" total={2000} cases={100000} />
-          <InfoBox title="Recovered" total={2000} cases={100000} />
-          <InfoBox title="Deaths" total={2000} cases={100000} />
+          <InfoBox
+            title="Coronavirus cases"
+            total={countryInfo.cases}
+            cases={countryInfo.todayCases}
+          />
+          <InfoBox
+            title="Recovered"
+            total={countryInfo.recovered}
+            cases={countryInfo.todayRecovered}
+          />
+          <InfoBox
+            title="Deaths"
+            total={countryInfo.deaths}
+            cases={countryInfo.todayDeaths}
+          />
         </div>
 
         <Map />
